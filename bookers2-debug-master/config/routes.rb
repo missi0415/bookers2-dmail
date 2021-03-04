@@ -23,4 +23,10 @@ post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow'
     end
   end
   get '/search' => 'search#search'
+  
+  # チャット機能---------------
+  get 'chat/:id' => 'chats#show', as: 'chat'
+  resources :chats, only: [:create]
+  # ---------------------------
+  
 end

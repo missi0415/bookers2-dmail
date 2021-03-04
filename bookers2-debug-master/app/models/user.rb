@@ -68,6 +68,9 @@ include JpPrefecture
   def send_welcome_mail
     ThanksMailer.send_signup_email(self).deliver
   end
-
-
+  
+  # チャット機能---------------
+  has_many :user_rooms
+  has_many :chats
+  # ---------------------------
 end
