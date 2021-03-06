@@ -17,6 +17,7 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require anime
 
 
 $(function () {
@@ -33,4 +34,3 @@ $(function () {
     });
   });
 });
-

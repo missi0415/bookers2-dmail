@@ -10,6 +10,18 @@ class ThanksMailer < ApplicationMailer
     mail to: @user.email, subject: "会員登録が完了しました。"
   end
   
+  def notify_user(user)
+      @user = user
+      mail to: @user.email, subject: "定期配信"
+  end
+  
+  def daily
+    @users = User.all
+    @users.each do |user| 
+      ThanksMailer.notify_user(user).deliver
+    end
+  end
+  
   
   # def completion_of_registration(user)
   #   @user = user

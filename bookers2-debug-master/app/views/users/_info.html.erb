@@ -1,5 +1,5 @@
 <table class='table'>
-  <tr><%= attachment_image_tag(user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg") %></tr>
+  <tr><%= attachment_image_tag(user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg",class: "rounded-circle border border-5 border-primary animated flip") %></tr>
   <tr>
 	  <th>name</th>
 	  <th><%= user.name %></th>
@@ -26,5 +26,10 @@
         <%= link_to 'フォローする', follow_path(user.id), method: :POST ,class: "btn btn-outline-primary btn-sm btn-block"%>
       <% end %>
   <% end %>
-  <%= link_to '',edit_user_path(user),class: "btn btn-outline-secondary btn-block fas fa-user-cog edit_user_#{user.id}" %>
+  <%= link_to '',edit_user_path(user),class: "btn rounded-pill btn-outline-secondary btn-block fas fa-user-cog edit_user_#{user.id}" %>
+      <!--チャット機能----------------->
+      <% if current_user != user %>
+      <%= link_to 'chatを始める', chat_path(user.id),class: "btn btn-success btn-sm btn-block" %>
+      <% end %>
+      <!------------------------------->
 </div>
