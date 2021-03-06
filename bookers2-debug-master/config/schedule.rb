@@ -38,7 +38,7 @@ set :output, "#{Rails.root}/log/cron.log"
 # env :GEM_PATH, ENV['GEM_PATH']
 # set :environment, :development
 # set :output, { :error => "log/error.log", :standard => 'log/cron.log' }
-every 1.minutes do
+every 1.day, at: "9:00 am" do
   puts 'hello'
   # runner "ThanksMailer.notify_user"
   # puts 'runnnerrr'
